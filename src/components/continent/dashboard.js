@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import {Switch, Link, Route} from "react-router-dom"
 import DashboardHeader from "./dashboardheader"
 import DashBoardBody from "./dashboardbody"
+import EachCountry from "../country/eachCountry"
 
 class DashBoard extends Component {
     constructor (props) {
@@ -62,15 +64,27 @@ handletdyCases(){
 
     render () {
         return (
+   
             <div>
+      
                 <DashboardHeader statsAfrica={this.state.statsAfrica} />
                 <button onClick={this.handleCases}>Cases</button>
                 <button onClick={this.handleDeaths}>Deaths</button>
                 <button onClick={this.handletdyCases}>todaysCase</button>
-                    <DashBoardBody statsCountries = {this.state.statsCountries}/>
-          
-               
+                {this.state.statsCountries.map(m=>
+                <Link exact to={`/${m.country}`}>
+                         <DashBoardBody key={m.country} statsCountries = {m}/>
+                </Link>
+                )}
+                <Switch>
+                {this.state.statsCountries.map(m=>
+                    <Route exact path={`/${m.country}`} render={()=> <EachCountry countryDetail = {m} />} />
+                )}
+                </Switch> 
+                 
+              
             </div>
+      
         )
     }
 }

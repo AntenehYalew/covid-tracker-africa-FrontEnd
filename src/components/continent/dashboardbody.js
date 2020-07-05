@@ -13,13 +13,8 @@ class DashBoardBody extends Component {
         const allData = this.props.statsCountries
         return (
             <div>
-                {allData.map(m=>
-                    <h5 key={m.country}>{m.country} // Cases:- {m.cases} // deaths:-{m.deaths} // todayCases:- {m.todayCases}</h5>
-                )}
-
-         
-                 
-              
+                
+                    <h5 >{allData.country} // Cases:- {allData.cases} // deaths:-{allData.deaths} // todayCases:- {allData.todayCases}</h5>
             </div>
         )
     }

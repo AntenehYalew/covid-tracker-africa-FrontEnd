@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DashBoard from "./components/continent/dashboard"
-import EachCountry from "./components/country/eachCountry"
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import axios from 'axios';
