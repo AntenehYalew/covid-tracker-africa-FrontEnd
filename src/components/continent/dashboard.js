@@ -66,8 +66,9 @@ handletdyCases(){
         return (
    
             <div>
-      
-                <DashboardHeader statsAfrica={this.state.statsAfrica} />
+             <Switch>
+             <Route exact path="/">
+             <DashboardHeader statsAfrica={this.state.statsAfrica} />
                 <button onClick={this.handleCases}>Cases</button>
                 <button onClick={this.handleDeaths}>Deaths</button>
                 <button onClick={this.handletdyCases}>todaysCase</button>
@@ -76,7 +77,7 @@ handletdyCases(){
                          <DashBoardBody key={m.country} statsCountries = {m}/>
                 </Link>
                 )}
-                <Switch>
+             </Route>
                 {this.state.statsCountries.map(m=>
                     <Route exact path={`/${m.country}`} render={()=> <EachCountry countryDetail = {m} />} />
                 )}
