@@ -8,19 +8,29 @@ class EachCountry extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            data :{
+            casesData :{
                 labels :[],
                 datasets:[{
-                    label:"Covid-cases",
-                    borderColor: 'rgb(255, 99, 132)',
-                    data:[]
-                },
-                {
-                    label:"Covid-death",
-                    borderColor: 'rgb(55, 199, 12)',
-                    data:[]
-                }
-            ]
+                    label:"Cases",
+                    borderColor: "rgba(175, 204, 250,0.8)",
+                    data:[],
+                    borderWidth:3,
+                    fill: false,
+                    pointRadius:3,
+                    pointStyle:"star"
+                }]
+            },
+            deathsData:{
+                labels :[],
+                    datasets:[{
+                            label:"Death",
+                            borderColor: "rgba(250, 152, 200,0.8)",
+                            data:[],
+                            borderWidth:3,
+                            fill: false,
+                            pointRadius:3,
+                            pointStyle:"star"
+                    }]
             }
         }
     }
@@ -31,20 +41,18 @@ class EachCountry extends Component {
                     const labels = Object.keys(res.data.timeline.cases)
                     const casesData = Object.values(res.data.timeline.cases)
                     const deathData = Object.values(res.data.timeline.deaths)
+                    const newCasesData = [...this.state.casesData.datasets]
+                    newCasesData[0] = {...newCasesData[0], data:casesData}
+                    const newDeathData = [...this.state.deathsData.datasets]
+                    newDeathData[0] = {...newDeathData[0], data:deathData}
                     this.setState({
-                        data: {
+                        casesData: {
                             labels :labels,
-                            datasets:[{
-                                label:"Covid-cases",
-                                borderColor: 'rgb(237, 220, 72)',
-                                data:casesData
-                            },
-                            {
-                                label:"Covid-death",
-                                borderColor: 'rgb(251, 65, 42)',
-                                data:deathData
-                            }
-                        ]
+                            datasets:newCasesData
+                        },
+                        deathsData:{
+                            labels :labels,
+                            datasets:newDeathData
                         }
                     })
                 })
@@ -55,10 +63,19 @@ class EachCountry extends Component {
 
         return (
             <div>
-              <Line 
-                data={this.state.data}
+            <div style={{width:"50%"}}>
+            <Line 
+                data={this.state.casesData}
                 options={{ maintainAspectRatio: false }}
                />
+            </div>
+            <div style={{width:"50%"}}>
+              <Line 
+                data={this.state.deathsData}
+                options={{ maintainAspectRatio: false }}
+               />
+              </div>
+             
             </div>
         )
     }
