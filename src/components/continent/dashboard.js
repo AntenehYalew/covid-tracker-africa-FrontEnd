@@ -64,8 +64,9 @@ handletdyCases(){
 
     render () {
         return (
-   
+            
             <div>
+            <div></div>
              <Switch>
              <Route exact path="/">
              <DashboardHeader statsAfrica={this.state.statsAfrica} />
