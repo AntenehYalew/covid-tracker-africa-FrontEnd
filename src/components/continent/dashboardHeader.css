@@ -1,0 +1,62 @@
+.dashBoard-cont{
+    display: flex;
+    margin: 35px 0 ;
+    padding: 15px 0;
+    color: rgba(5, 5, 5,0.6);
+    font-family: 'EB Garamond', serif;
+}
+.dashboard-africa-left{
+    width:40%;
+
+}
+.dashboard-africa-left img{
+    width: 80%;
+}
+.dashboard-africa-right{
+    width:60%;
+    text-align: center;
+}
+.dashboard-africa-right .row{
+    margin-left: 2.5rem;
+}
+.cases,.tests,.death{
+    border-radius: 16px;
+    margin:0.5rem
+}
+.cases{
+   /*  border: 4px solid #fcdrgb(252,223,127);f7f; */
+    background: rgb(252,223,127);
+background: linear-gradient(114deg, rgba(252,223,127,1) 45%, rgba(255,255,255,1) 120%);
+}
+.death{
+/*     border: 4px solid #f1b9be; */
+    background: rgb(248,110,121);
+background: linear-gradient(114deg, rgba(248,110,121,1) 45%, rgba(255,255,255,1) 120%);
+}
+.tests{
+  /*   border: 4px solid #66e283; */
+    background: rgb(102,226,131);
+background: linear-gradient(114deg, rgba(102,226,131,1) 45%, rgba(255,255,255,1) 120%);
+}
+
+
+@media screen and (max-width:768px){
+  .row .col h3{
+      font-size: 1.15rem;
+      font-weight: 700;
+  } 
+  .dashboard-africa-left img{
+    width: 100%;
+}
+  
+}
+
+@media screen and (max-width:450px){
+ 
+.dashboard-africa-right{
+    width: 100%;
+}
+    .dashboard-africa-left{
+        display: none;
+    }
+  }

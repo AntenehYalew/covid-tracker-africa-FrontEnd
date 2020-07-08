@@ -17,6 +17,7 @@ class DashBoard extends Component {
         this.handleCases = this.handleCases.bind(this)
         this.handleDeaths = this.handleDeaths.bind(this)
         this.handletdyCases = this.handletdyCases.bind(this)
+      
     }
 
 async componentDidMount(){
@@ -66,18 +67,33 @@ handletdyCases(){
         return (
             
             <div>
-            <div></div>
              <Switch>
              <Route exact path="/">
+          {/*    {this.state.statsCountries.length>0 &&  */}
+             <div>
              <DashboardHeader statsAfrica={this.state.statsAfrica} />
-                <button onClick={this.handleCases}>Cases</button>
-                <button onClick={this.handleDeaths}>Deaths</button>
-                <button onClick={this.handletdyCases}>todaysCase</button>
-                {this.state.statsCountries.map(m=>
-                <Link exact to={`/${m.country}`}>
-                         <DashBoardBody key={m.country} statsCountries = {m}/>
-                </Link>
-                )}
+           
+            <table className="table table-striped" >
+            <thead>
+                <tr>    
+                    <th className="th-country">Country</th>
+                    <th className="th-flag">Flag</th>
+                    <th className="th-cases"  onClick={this.handleCases}>Total Cases</th>
+                    <th className="th-cases" onClick={this.handletdyCases}>New Cases</th>
+                    <th className="th-death" onClick={this.handleDeaths}>Total Death</th>
+                    <th className="th-death">New Death</th>
+                    <th className="th-tests">Total Tests</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {this.state.statsCountries.map(m=>
+                        <DashBoardBody key={m.country} statsCountries = {m}/>
+                    )}
+                </tbody>
+            </table>
+            </div>
+    {/*     } */}
+
              </Route>
                 {this.state.statsCountries.map(m=>
                     <Route exact path={`/${m.country}`} render={()=> <EachCountry countryDetail = {m} />} />
