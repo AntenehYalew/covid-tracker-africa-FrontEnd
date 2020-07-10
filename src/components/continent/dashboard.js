@@ -69,20 +69,20 @@ handletdyCases(){
             <div>
              <Switch>
              <Route exact path="/">
-          {/*    {this.state.statsCountries.length>0 &&  */}
+             {this.state.statsCountries.length>0 ?
              <div>
              <DashboardHeader statsAfrica={this.state.statsAfrica} />
-           
+    
             <table className="table table-striped" >
             <thead>
-                <tr>    
-                    <th className="th-country">Country</th>
-                    <th className="th-flag">Flag</th>
-                    <th className="th-cases"  onClick={this.handleCases}>Total Cases</th>
-                    <th className="th-cases" onClick={this.handletdyCases}>New Cases</th>
-                    <th className="th-death" onClick={this.handleDeaths}>Total Death</th>
-                    <th className="th-death">New Death</th>
-                    <th className="th-tests">Total Tests</th>
+                <tr >    
+                    <th className="th-country sticky-top">Country</th>
+                    <th className="th-flag sticky-top">Flag</th>
+                    <th className="th-cases sticky-top"  onClick={this.handleCases}>Total Cases</th>
+                    <th className="th-cases sticky-top" onClick={this.handletdyCases}>New Cases</th>
+                    <th className="th-death sticky-top" onClick={this.handleDeaths}>Total Death</th>
+                    <th className="th-death sticky-top">New Death</th>
+                    <th className="th-tests sticky-top">Total Tests</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,7 +92,36 @@ handletdyCases(){
                 </tbody>
             </table>
             </div>
-    {/*     } */}
+            : 
+            <div>
+            <div class="load-wrapp">
+                <div class="load-6">
+                    <div class="letter-holder">
+                    <div class="l-1 letter">L</div>
+                    <div class="l-2 letter">o</div>
+                    <div class="l-3 letter">a</div>
+                    <div class="l-4 letter">d</div>
+                    <div class="l-5 letter">i</div>
+                    <div class="l-6 letter">n</div>
+                    <div class="l-7 letter">g</div>
+                    <div class="l-8 letter">.</div>
+                    <div class="l-9 letter">.</div>
+                    <div class="l-10 letter">.</div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="load-wrapp">
+                <div class="load-5">
+                    <div class="ring-2">
+                        <div class="ball-holder">
+                             <div class="ball"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+             </div>
+        }
 
              </Route>
                 {this.state.statsCountries.map(m=>
