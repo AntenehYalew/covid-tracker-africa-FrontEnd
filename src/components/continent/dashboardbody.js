@@ -9,18 +9,22 @@ class DashBoardBody extends Component {
         this.state={
             statsCountries:[]
         }
+        this.handleClick = this.handleClick.bind(this)
 
     }
     numFormat = (num)=>{
       return  num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
- 
+    handleClick(){
+       this.props.handleRoute(this.props.statsCountries.country)
+    }
+    
     render () {
         const allData = this.props.statsCountries
         return (
-                <tr>
-                    <td className="td-country">  <Link exact to={`/${allData.country}`}>{allData.country} </Link> </td>
+                <tr onClick={this.handleClick}>
                     <td className="td-flag"><img className="flag" src={allData.countryInfo.flag}/></td>
+                    <td className="td-country"> {allData.country} </td>
                     <td className="td-ttl-cases">{this.numFormat(allData.cases)}</td>
                     <td className="td-tdy-cases">{this.numFormat(allData.todayCases)}</td>
                     <td className="td-ttl-death">{this.numFormat(allData.deaths)}</td>
