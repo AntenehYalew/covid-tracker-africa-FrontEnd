@@ -1,4 +1,63 @@
-.country-flag img{
-    width: 50%;
-    border-radius: 50%;
+.country-cont{
+    margin-top: 1rem;
+    font-size: 1.45rem;
 }
+.country-cont > .row{
+    margin-bottom: 2rem;
+}
+.country-name{
+    font-size: 4rem;
+    color: white;
+}
+
+.country-flag img{
+    position: absolute;
+    width: 30%;
+    border-radius: 50%;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.country-green,
+.country-yellow,
+.country-red{
+    margin-top: 1rem;
+}
+
+.country-green{
+    color:rgb(102,226,131) ;
+}
+.country-yellow{
+color: rgb(252,223,127);
+}
+.country-red{
+ color: rgb(248,110,121);
+}
+
+
+.country-cases,
+.country-deaths{
+   margin-bottom: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .country-cont > .row{
+        margin-bottom: 1rem;
+    }
+    .country-flag img{
+        width: 40%;
+    }
+
+  }
+
+  @media only screen and (min-width: 940px) {
+    .country-cases,
+    .country-deaths{
+       width: 80%;
+       margin: auto;
+    }
+
+  }

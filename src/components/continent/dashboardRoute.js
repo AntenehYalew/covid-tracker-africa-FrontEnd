@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DashboardHeader from "./dashboardheader"
 import DashBoardBody from "./dashboardbody"
-import { Link } from 'react-router-dom'
+import Loading from "../partials/loadingPage"
 import "./dashboardRoute.css"
 class DashBoardRoute extends Component {
     constructor(props){
@@ -51,28 +51,7 @@ class DashBoardRoute extends Component {
                 </div>
             </div>
             :  
-            <div class="load-wrapp">
-                <div class="load-cont">
-                    <div class="letter-holder">
-                        <div class="l-1 letter">L</div>
-                        <div class="l-2 letter">o</div>
-                        <div class="l-3 letter">a</div>
-                        <div class="l-4 letter">d</div>
-                        <div class="l-5 letter">i</div>
-                        <div class="l-6 letter">n</div>
-                        <div class="l-7 letter">g</div>
-                        <div class="l-8 letter">.</div>
-                        <div class="l-9 letter">.</div>
-                        <div class="l-10 letter">.</div>
-                     </div>
-                     <div class="spinner">
-                        <div class="bubble-1"></div>
-                        <div class="bubble-2"></div>
-                        <div class="bubble-3"></div>
-                        <div class="bubble-4"></div>
-                     </div>
-                </div>
-             </div>
+              <Loading/>              
         }
 
             </div>
