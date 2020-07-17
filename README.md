@@ -1,8 +1,8 @@
 ## Covid 19 Africa Data
 
-A comprehensive and live update of Covid 19 data available through out the African continent.
+A comprehensive and live update of covid 19 data for the continent of Africa.
 
-Continent and country data collected from John Hopkins University API available for the public.
+Continent and country data collected from John Hopkins University Public API
 
 ## Getting Started
 
@@ -36,4 +36,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Acknowledgments
 
-- Hat tip to John Hopkins University team who made their API data available
+- Hat tip to John Hopkins University team who made their API available
