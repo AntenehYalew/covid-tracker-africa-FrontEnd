@@ -12,6 +12,8 @@ class DashboardHeader extends Component {
   };
 
   render() {
+    //Refactor props data
+    const africaData = this.props.statsAfrica;
     return (
       <div className="container dashBoard-cont">
         <div className="dashboard-africa-left">
@@ -23,7 +25,7 @@ class DashboardHeader extends Component {
               <h3>New Cases </h3>
             </div>
             <div className="col cases ">
-              <h3>{this.headerNumFormat(this.props.statsAfrica.todayCases)}</h3>
+              <h3>{this.headerNumFormat(africaData.todayCases)}</h3>
             </div>
           </div>
           <div className="row">
@@ -31,9 +33,7 @@ class DashboardHeader extends Component {
               <h3>New Deaths</h3>
             </div>
             <div className="col death ">
-              <h3>
-                {this.headerNumFormat(this.props.statsAfrica.todayDeaths)}{" "}
-              </h3>
+              <h3>{this.headerNumFormat(africaData.todayDeaths)} </h3>
             </div>
           </div>
           <div className="row">
@@ -41,7 +41,7 @@ class DashboardHeader extends Component {
               <h3>Total Cases</h3>
             </div>
             <div className="col cases">
-              <h3>{this.headerNumFormat(this.props.statsAfrica.cases)} </h3>
+              <h3>{this.headerNumFormat(africaData.cases)} </h3>
             </div>
           </div>
           <div className="row">
@@ -49,7 +49,7 @@ class DashboardHeader extends Component {
               <h3>Total Deaths</h3>
             </div>
             <div className="col death">
-              <h3> {this.headerNumFormat(this.props.statsAfrica.deaths)} </h3>
+              <h3> {this.headerNumFormat(africaData.deaths)} </h3>
             </div>
           </div>
           <div className="row">
@@ -57,7 +57,7 @@ class DashboardHeader extends Component {
               <h3>Total Tests</h3>
             </div>
             <div className="col tests">
-              <h3> {this.headerNumFormat(this.props.statsAfrica.tests)} </h3>
+              <h3> {this.headerNumFormat(africaData.tests)} </h3>
             </div>
           </div>
         </div>
