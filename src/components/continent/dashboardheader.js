@@ -3,9 +3,6 @@ import "./dashboardHeader.css";
 import africaMap from "../images/FlagsMapAfrica.png";
 
 class DashboardHeader extends Component {
-  constructor(props) {
-    super(props);
-  }
   //Format Numbers to readable
   headerNumFormat = (num) => {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");

@@ -28,7 +28,11 @@ class DashBoardRoute extends Component {
             <div className="table-cont">
               <h3>
                 Public information collected from
-                <a href="https://coronavirus.jhu.edu/map.html" target="_blank">
+                <a
+                  href="https://coronavirus.jhu.edu/map.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   John Hopkins University
                 </a>
               </h3>

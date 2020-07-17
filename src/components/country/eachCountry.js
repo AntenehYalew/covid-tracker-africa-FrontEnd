@@ -130,10 +130,11 @@ class EachCountry extends Component {
 
     const countryDetail = this.props.countryDetail;
     return (
+      //Country page header
       <div className="container country-cont">
         <div className="container row">
           <div className="col-6 country-flag">
-            <img src={countryDetail.countryInfo.flag} />
+            <img src={countryDetail.countryInfo.flag} alt="Flag" />
           </div>
           <div className="col-6 country-name">{countryDetail.country}</div>
         </div>
@@ -237,6 +238,10 @@ class EachCountry extends Component {
             </div>
           </div>
         </div>
+
+        {/* Chart Js used to build the chart showing below 
+            Line options and configuration shown above as datasetsOptions
+        */}
         <div className="country-cases">
           <Line data={this.state.casesData} options={datasetsOptions} />
         </div>

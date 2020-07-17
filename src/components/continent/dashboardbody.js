@@ -22,7 +22,7 @@ class DashBoardBody extends Component {
     return (
       <tr onClick={this.handleClick}>
         <td className="td-flag">
-          <img className="flag" src={allData.countryInfo.flag} />
+          <img className="flag" src={allData.countryInfo.flag} alt="Flag" />
         </td>
         <td className="td-country">
           <span> {allData.country}</span>{" "}
