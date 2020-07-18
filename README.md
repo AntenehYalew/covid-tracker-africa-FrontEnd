@@ -33,6 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Author
 
 - **Anteneh T Yalew**
+- **yalewantenehtadesse@gmail.com**
 
 ## Acknowledgments
 

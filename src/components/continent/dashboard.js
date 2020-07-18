@@ -28,7 +28,7 @@ async componentDidMount(){
       //Collect Country Data
       async function runAllCountries(){
         for (let i = 0; i< resp.data.countries.length; i++){
-          const newdata = await axios (`https://corona.lmao.ninja/v2/countries/${resp.data.countries[i]}?yesterday=true&strict=true&query =`)
+          const newdata = await axios (`https://corona.lmao.ninja/v2/countries/${resp.data.countries[i]}?today=true&strict=true&query =`)
             allDetails.countryData.push(newdata.data)
         }
         currentComponent.setState({

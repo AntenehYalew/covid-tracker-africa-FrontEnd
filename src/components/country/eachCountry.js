@@ -108,6 +108,10 @@ class EachCountry extends Component {
         yAxes: [axesOptions],
         xAxes: [axesOptions],
       },
+      animation: {
+        duration: 1000,
+        easing: "easeInCirc",
+      },
       legend: {
         labels: {
           boxWidth: 0,
@@ -243,10 +247,10 @@ class EachCountry extends Component {
             Line options and configuration shown above as datasetsOptions
         */}
         <div className="country-cases">
-          <Line data={this.state.casesData} options={datasetsOptions} />
+          <Line data={this.state.casesData} options={datasetsOptions} redraw />
         </div>
         <div className="country-deaths">
-          <Line data={this.state.deathsData} options={datasetsOptions} />
+          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
         </div>
       </div>
     );
