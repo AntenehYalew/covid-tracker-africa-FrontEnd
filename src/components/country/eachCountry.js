@@ -149,7 +149,7 @@ class EachCountry extends Component {
         </div>
 
         <div className="container row">
-          <div className="col-md-4 col-6 country-yellow">
+          <div className="col-4 country-yellow">
             Cases
             <div className="row">
               <div className="col-6">
@@ -165,7 +165,7 @@ class EachCountry extends Component {
             </div>
           </div>
 
-          <div className="col-md-4 col-6 country-yellow">
+          <div className="col-4 country-yellow">
             Active
             <div className="row">
               <div className="col-6">
@@ -180,7 +180,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-6 country-red">
+          <div className="col-4 country-red">
             Deaths
             <div className="row">
               <div className="col-6">
@@ -195,7 +195,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-6 country-red">
+          <div className="col-4 country-red">
             Critical
             <div className="row">
               <div className="col-6">
@@ -210,7 +210,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-6 country-green">
+          <div className="col-4 country-green">
             Recovered
             <div className="row">
               <div className="col-6">
@@ -225,7 +225,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-6 country-green">
+          <div className="col-4 country-green">
             Tests
             <div className="row">
               <div className="col-6">
