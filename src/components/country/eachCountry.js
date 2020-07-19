@@ -94,8 +94,13 @@ class EachCountry extends Component {
       },
     };
     //chart options
+
+    const screenresolution = () => {
+      return window.innerWidth < 500 ? false : true;
+    };
+
     const datasetsOptions = {
-      maintainAspectRatio: true,
+      maintainAspectRatio: screenresolution(),
       tooltips: {
         mode: "index",
         intersect: false,
@@ -141,16 +146,6 @@ class EachCountry extends Component {
             <img src={countryDetail.countryInfo.flag} alt="Flag" />
           </div>
           <div className="col-6 country-name">{countryDetail.country}</div>
-        </div>
-
-        {/* Chart Js used to build the chart showing below 
-            Line options and configuration shown above as datasetsOptions
-        */}
-        <div className="country-cases">
-          <Line data={this.state.casesData} options={datasetsOptions} redraw />
-        </div>
-        <div className="country-deaths">
-          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
         </div>
 
         <div className="container row">
@@ -251,6 +246,15 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
+        </div>
+        {/* Chart Js used to build the chart showing below 
+            Line options and configuration shown above as datasetsOptions
+        */}
+        <div className="country-cases">
+          <Line data={this.state.casesData} options={datasetsOptions} redraw />
+        </div>
+        <div className="country-deaths">
+          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
         </div>
       </div>
     );

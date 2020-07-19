@@ -39,7 +39,7 @@
 
 .country-cases,
 .country-deaths {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -62,5 +62,27 @@
   .country-deaths {
     width: 80%;
     margin: auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .country-cases,
+  .country-deaths {
+    height: 40vh;
+    margin-bottom: 0.85rem;
+  }
+  .country-name {
+    font-size: 1.15rem;
+  }
+  .country-flag img {
+    width: 30%;
+  }
+  .country-cont > .row {
+    margin-bottom: 0.5rem;
+  }
+  .country-green,
+  .country-yellow,
+  .country-red {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
   }
 }
