@@ -1,0 +1,12 @@
+.dashboard-cont {
+  min-height: 100vh;
+  position: absolute;
+}
+.dashboard-body {
+  min-height: 95vh;
+  position: absolute;
+}
+.dashboard-footer {
+  min-height: 5vh;
+  position: absolute;
+}

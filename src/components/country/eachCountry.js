@@ -143,6 +143,16 @@ class EachCountry extends Component {
           <div className="col-6 country-name">{countryDetail.country}</div>
         </div>
 
+        {/* Chart Js used to build the chart showing below 
+            Line options and configuration shown above as datasetsOptions
+        */}
+        <div className="country-cases">
+          <Line data={this.state.casesData} options={datasetsOptions} redraw />
+        </div>
+        <div className="country-deaths">
+          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
+        </div>
+
         <div className="container row">
           <div className="col-md-4 col-6 country-yellow">
             Cases
@@ -241,16 +251,6 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Chart Js used to build the chart showing below 
-            Line options and configuration shown above as datasetsOptions
-        */}
-        <div className="country-cases">
-          <Line data={this.state.casesData} options={datasetsOptions} redraw />
-        </div>
-        <div className="country-deaths">
-          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
         </div>
       </div>
     );

@@ -1,13 +1,18 @@
-.navbar-brand img{
-    margin-right: 0.25rem;
+.navbar-brand img {
+  margin-right: 0.25rem;
 }
-.navbar .container .flatten{
-    color: rgb(244, 247, 241);
+.navbar .container .flatten {
+  color: rgb(244, 247, 241);
 }
 .navbar .container .navbar-brand {
-    font-weight: 600;
-    letter-spacing: 0.15rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
 }
 .navbar .container .navbar-brand:hover {
   font-weight: 900;
+}
+@media screen and (max-width: 500px) {
+  .navbar .container .navbar-text {
+    display: none;
+  }
 }

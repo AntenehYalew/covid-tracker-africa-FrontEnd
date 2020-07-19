@@ -88,6 +88,7 @@ class DashBoardRoute extends Component {
                     </th>
                   </tr>
                 </thead>
+
                 <tbody>
                   {dashBoardProps.statsCountries.map((m) => (
                     <DashBoardBody
