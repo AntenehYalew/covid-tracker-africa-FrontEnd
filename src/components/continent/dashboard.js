@@ -84,6 +84,7 @@ class DashBoard extends Component {
             {statsCountries.length ? (
               statsCountries.map((country) => (
                 <Route
+                  key={country.country}
                   exact
                   path={`/${country.country}`}
                   render={() => (

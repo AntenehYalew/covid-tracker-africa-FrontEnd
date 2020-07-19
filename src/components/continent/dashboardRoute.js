@@ -45,7 +45,7 @@ class DashBoardRoute extends Component {
                       className="th-country "
                       onClick={(e) => this.handleClick(e, "country")}
                     >
-                      Country <i class="fas fa-sort"></i>
+                      Country <i className="fas fa-sort"></i>
                     </th>
                     <th colSpan="2" className="th-cases ">
                       Cases
