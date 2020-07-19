@@ -19,7 +19,7 @@ table {
 }
 .table-cont a:hover {
   color: white;
-  text-decoration: underline rgb(112, 226, 247);
+  text-decoration: underline;
   cursor: pointer;
 }
 .table-cont table thead tr th {
@@ -50,7 +50,7 @@ thead tr th {
 
 tbody tr th {
   font-size: 1rem;
-  color: seashell;
+  color: rgb(250, 250, 250);
   letter-spacing: 0.075rem;
   font-weight: 400;
 }
@@ -136,7 +136,7 @@ thead tr:nth-child(2) .th-tests,
 .td-country {
   width: 23%;
   text-align: left;
-  color: rgb(223, 221, 221);
+  color: rgb(216, 215, 215);
   position: relative;
   text-decoration: none;
 }
@@ -163,13 +163,17 @@ thead tr:nth-child(2) .th-tests,
   width: 14%;
 }
 
-.td-tdy-cases,
-.td-ttl-cases {
-  color: rgb(252, 223, 127);
+.td-tdy-cases {
+  color: rgb(252, 233, 173);
 }
-.td-tdy-death,
+.td-ttl-cases {
+  color: rgb(248, 192, 9);
+}
+.td-tdy-death {
+  color: rgb(233, 105, 115);
+}
 .td-ttl-death {
-  color: rgb(248, 110, 121);
+  color: rgb(246, 81, 100);
 }
 .td-ttl-tests {
   color: rgb(102, 226, 131);
@@ -209,6 +213,12 @@ thead tr:nth-child(2) th {
 }
 
 @media screen and (max-width: 500px) {
+  .table tbody td {
+    padding: 0.65rem 0;
+  }
+  .table-cont a {
+    text-decoration: underline;
+  }
   .dash .td-flag {
     width: 0%;
   }
@@ -220,19 +230,22 @@ thead tr:nth-child(2) th {
   }
   .td-country span {
     font-size: 1rem;
+    font-weight: 500;
+    color: rgb(235, 233, 233);
+    text-decoration: underline;
   }
   .td-tdy-cases,
   .td-tdy-death,
   .td-ttl-death,
   .td-ttl-cases,
   .td-ttl-tests {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
   .th-cases,
   .th-death,
   .th-tests,
   .th-country {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
   .table tbody td,
   .table tbody th,
@@ -266,26 +279,26 @@ thead tr:nth-child(2) th {
     width: 14%;
   }
   .td-country span {
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
     letter-spacing: 0rem;
   }
   .td-tdy-cases,
   .td-tdy-death {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     width: 20%;
     font-weight: 400;
   }
   .td-ttl-death,
   .td-ttl-cases {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     width: 23%;
     font-weight: 400;
   }
   .th-cases,
   .th-death,
   .th-country {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 500;
   }
 }

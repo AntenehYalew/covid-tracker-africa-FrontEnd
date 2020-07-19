@@ -27,7 +27,7 @@ class DashBoardRoute extends Component {
             <DashboardHeader statsAfrica={dashBoardProps.statsAfrica} />
             <div className="table-cont">
               <h3>
-                Public information collected from
+                Public information collected from &nbsp;
                 <a
                   href="https://coronavirus.jhu.edu/map.html"
                   target="_blank"
