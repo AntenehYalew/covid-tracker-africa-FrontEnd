@@ -5,6 +5,8 @@ import NavBar from "../partials/navbar";
 import DashBoardRoute from "./dashboardRoute";
 import EachCountry from "../country/eachCountry";
 import Footer from "../partials/footer";
+import Error from "../partials/error";
+import ScrollToTop from "../partials/scrollTop";
 import Loading from "../partials/loadingPage";
 
 //Main Switch page to redirect each path
@@ -15,6 +17,7 @@ class DashBoard extends Component {
       statsAfrica: {},
       statsCountries: [],
       toggleSorting: true,
+      error: false,
     };
     this.handleSort = this.handleSort.bind(this);
   }
@@ -40,6 +43,11 @@ class DashBoard extends Component {
           });
         }
         runAllCountries();
+      })
+      .catch((err) => {
+        currentComponent.setState({
+          error: true,
+        });
       });
   }
 
@@ -66,51 +74,58 @@ class DashBoard extends Component {
   render() {
     const statsCountries = this.state.statsCountries;
     return (
-      <div className="dashboard-cont">
-        <div className="dashboard-body">
-          <NavBar />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(routeProps) => (
-                <DashBoardRoute
-                  {...routeProps}
-                  dashBoardProps={this.state}
-                  handleSort={this.handleSort}
-                />
-              )}
-            />
-            {statsCountries.length ? (
-              statsCountries.map((country) => (
+      <ScrollToTop>
+        {" "}
+        <div className="dashboard-cont">
+          <div className="dashboard-body">
+            <NavBar />
+            {this.state.error ? (
+              <Error />
+            ) : (
+              <Switch>
                 <Route
-                  key={country.country}
                   exact
-                  path={`/${country.country}`}
-                  render={() => (
-                    <EachCountry key={country} countryDetail={country} />
+                  path="/"
+                  render={(routeProps) => (
+                    <DashBoardRoute
+                      {...routeProps}
+                      dashBoardProps={this.state}
+                      handleSort={this.handleSort}
+                    />
                   )}
                 />
-              ))
-            ) : (
-              <Loading />
-            )}
-            {/* Redirect to home "/" if data is not found for non African Countries */}
-            <Route
-              render={(routeProps) => (
-                <DashBoardRoute
-                  {...routeProps}
-                  dashBoardProps={this.state}
-                  handleSort={this.handleSort}
+                {statsCountries.length ? (
+                  statsCountries.map((country) => (
+                    <Route
+                      key={country.country}
+                      exact
+                      path={`/${country.country}`}
+                      render={() => (
+                        <EachCountry key={country} countryDetail={country} />
+                      )}
+                    />
+                  ))
+                ) : (
+                  <Loading />
+                )}
+                {/* Redirect to home "/" if data is not found for non African Countries */}
+                <Route
+                  render={(routeProps) => (
+                    <DashBoardRoute
+                      {...routeProps}
+                      dashBoardProps={this.state}
+                      handleSort={this.handleSort}
+                    />
+                  )}
                 />
-              )}
-            />
-          </Switch>
+              </Switch>
+            )}
+          </div>
+          <div className="dashboard-footer">
+            <Footer />
+          </div>
         </div>
-        <div className="dashboard-footer">
-          <Footer />
-        </div>
-      </div>
+      </ScrollToTop>
     );
   }
 }

@@ -14,6 +14,10 @@ table {
   color: white;
   padding-bottom: 1rem;
 }
+.table-cont h3 small {
+  font-style: italic;
+  font-size: 60%;
+}
 .table-cont a {
   color: white;
 }

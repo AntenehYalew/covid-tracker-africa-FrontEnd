@@ -20,6 +20,9 @@ class DashBoardRoute extends Component {
 
   render() {
     const dashBoardProps = this.props.dashBoardProps;
+    const updatedTime = Math.floor(
+      (Date.now() - dashBoardProps.statsAfrica.updated) / 60000
+    );
     return (
       <div className="container dashboardroute-cont">
         {dashBoardProps.statsCountries.length > 0 ? (
@@ -35,7 +38,10 @@ class DashBoardRoute extends Component {
                 >
                   John Hopkins University
                 </a>
+                &nbsp;
+                <small>(Updated: {updatedTime} min ago)</small>
               </h3>
+
               <table className="table table-striped">
                 <thead>
                   <tr>
@@ -60,31 +66,31 @@ class DashBoardRoute extends Component {
                       className="th-cases "
                       onClick={(e) => this.handleClick(e, "cases")}
                     >
-                      Total<i class="fas fa-sort"></i>
+                      Total<i className="fas fa-sort"></i>
                     </th>
                     <th
                       className="th-cases "
                       onClick={(e) => this.handleClick(e, "todayCases")}
                     >
-                      New<i class="fas fa-sort"></i>
+                      New<i className="fas fa-sort"></i>
                     </th>
                     <th
                       className="th-death "
                       onClick={(e) => this.handleClick(e, "deaths")}
                     >
-                      Total<i class="fas fa-sort"></i>
+                      Total<i className="fas fa-sort"></i>
                     </th>
                     <th
                       className="th-death "
                       onClick={(e) => this.handleClick(e, "todayDeaths")}
                     >
-                      New<i class="fas fa-sort"></i>
+                      New<i className="fas fa-sort"></i>
                     </th>
                     <th
                       className="th-tests "
                       onClick={(e) => this.handleClick(e, "tests")}
                     >
-                      Total<i class="fas fa-sort"></i>
+                      Total<i className="fas fa-sort"></i>
                     </th>
                   </tr>
                 </thead>

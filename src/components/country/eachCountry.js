@@ -88,6 +88,7 @@ class EachCountry extends Component {
       ticks: {
         beginAtZero: true,
         fontColor: "white",
+        precision: 0,
       },
       gridLines: {
         display: false,
