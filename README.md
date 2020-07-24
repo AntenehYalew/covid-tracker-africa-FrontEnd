@@ -4,7 +4,7 @@ A comprehensive and live update of covid 19 data for the continent of Africa.
 
 Continent and country data collected from John Hopkins University Public API
 
-Test page can be found **covidafricalive.com/**
+Test page can be found **https://www.covidafricalive.com/**
 
 ## Getting Started
 
