@@ -5,9 +5,17 @@ import { NavLink } from "react-router-dom";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar  navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <NavLink className="navbar-brand" to="/">
+          <NavLink
+            exact
+            activeClassName="selected"
+            className="navbar-brand"
+            to="/"
+            activeStyle={{
+              color: "rgb(66, 216, 52)",
+            }}
+          >
             <img
               src="https://www.vippng.com/png/full/366-3666268_620-chat-bubbles-icon-2017-12-01-africa.png"
               width="30"
@@ -16,6 +24,18 @@ class NavBar extends Component {
               alt="Africa"
             />
             Covid - Africa
+          </NavLink>
+
+          <NavLink
+            exact
+            activeClassName="selected"
+            className="navbar-brand comparison-navbar"
+            to="/comparison"
+            activeStyle={{
+              color: "rgb(66, 216, 52)",
+            }}
+          >
+            Comparison
           </NavLink>
 
           <span className="navbar-text flatten">"Let's Flatten the Curve"</span>

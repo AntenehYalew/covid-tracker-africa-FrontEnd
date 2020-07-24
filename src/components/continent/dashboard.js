@@ -8,6 +8,7 @@ import Footer from "../partials/footer";
 import Error from "../partials/error";
 import ScrollToTop from "../partials/scrollTop";
 import Loading from "../partials/loadingPage";
+import Comparison from "../compare/comparison";
 
 //Main Switch page to redirect each path
 class DashBoard extends Component {
@@ -45,6 +46,7 @@ class DashBoard extends Component {
         runAllCountries();
       })
       .catch((err) => {
+        console.log(err);
         currentComponent.setState({
           error: true,
         });
@@ -91,6 +93,15 @@ class DashBoard extends Component {
                       {...routeProps}
                       dashBoardProps={this.state}
                       handleSort={this.handleSort}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/comparison"
+                  render={(routeProps) => (
+                    <Comparison
+                      comparisonProps={this.state.statsAfrica.countries}
                     />
                   )}
                 />

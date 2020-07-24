@@ -1,0 +1,36 @@
+.comparison-cont {
+  margin-top: 2rem;
+}
+.comparison-cont h5 {
+  color: rgb(223, 219, 219);
+}
+.search-cont {
+  margin-top: 2rem;
+  min-height: 70vh;
+}
+.search-cont .compare-btn {
+  background-color: khaki;
+  width: 50%;
+  margin: 2rem auto;
+  position: relative;
+}
+.search-cont .option-btn {
+  color: #fff;
+  background-color: #545d81;
+}
+.comparisondata-cont .back-btn {
+  color: rgb(214, 202, 202);
+  margin: auto auto 1.5rem auto;
+  background-color: #343a40;
+  position: relative;
+  width: 50%;
+}
+.comparisondata-cont .back-btn:hover {
+  background-color: rgb(126, 113, 113);
+}
+.comparison-cases {
+  margin-top: 1.5rem;
+}
+.comparisondata-cont h4 {
+  color: #fff;
+}

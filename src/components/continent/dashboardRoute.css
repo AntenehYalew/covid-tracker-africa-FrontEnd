@@ -265,6 +265,9 @@ thead tr:nth-child(2) th {
   .td-ttl-tests {
     width: 17%;
   }
+  .table-cont .table tbody tr:hover > .td-country span:before {
+    visibility: hidden;
+  }
 }
 @media screen and (max-width: 425px) {
   .td-flag {

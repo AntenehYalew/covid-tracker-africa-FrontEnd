@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
 import axios from "axios";
+import ChartLine from "./chartLine";
 import "./eachCountry.css";
 
 class EachCountry extends Component {
@@ -20,6 +20,7 @@ class EachCountry extends Component {
       pointRadius: 1,
       pointHitRadius: 10,
     };
+
     this.state = {
       casesData: {
         labels: [],
@@ -83,61 +84,6 @@ class EachCountry extends Component {
   };
 
   render() {
-    //chart configuration
-    const axesOptions = {
-      ticks: {
-        beginAtZero: true,
-        fontColor: "white",
-        precision: 0,
-      },
-      gridLines: {
-        display: false,
-      },
-    };
-    //chart options
-
-    const screenresolution = () => {
-      return window.innerWidth < 500 ? false : true;
-    };
-
-    const datasetsOptions = {
-      maintainAspectRatio: screenresolution(),
-      tooltips: {
-        mode: "index",
-        intersect: false,
-      },
-      hover: {
-        mode: "index",
-        intersect: false,
-      },
-      scales: {
-        yAxes: [axesOptions],
-        xAxes: [axesOptions],
-      },
-      animation: {
-        duration: 1000,
-        easing: "easeInCirc",
-      },
-      legend: {
-        labels: {
-          boxWidth: 0,
-          fontColor: "white",
-          fontFamily: "EB Garamond, serif",
-          fontSize: 18,
-        },
-      },
-      title: {
-        display: true,
-        text: "Data collected from John Hopkins University",
-        position: "bottom",
-        fontFamily: "EB Garamond, serif",
-        fontColor: "white",
-        fontSize: 15,
-        fontStyle: "italic",
-        padding: 25,
-      },
-    };
-
     const countryDetail = this.props.countryDetail;
     return (
       //Country page header
@@ -150,7 +96,7 @@ class EachCountry extends Component {
         </div>
 
         <div className="container row">
-          <div className="col-4 country-yellow">
+          <div className="col-6 col-sm-4 country-yellow">
             Cases
             <div className="row">
               <div className="col-6">
@@ -166,7 +112,7 @@ class EachCountry extends Component {
             </div>
           </div>
 
-          <div className="col-4 country-yellow">
+          <div className="col-6 col-sm-4 country-yellow">
             Active
             <div className="row">
               <div className="col-6">
@@ -181,7 +127,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-4 country-red">
+          <div className="col-6 col-sm-4 country-red">
             Deaths
             <div className="row">
               <div className="col-6">
@@ -196,7 +142,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-4 country-red">
+          <div className="col-6 col-sm-4 country-red">
             Critical
             <div className="row">
               <div className="col-6">
@@ -211,7 +157,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-4 country-green">
+          <div className="col-6 col-sm-4 country-green">
             Recovered
             <div className="row">
               <div className="col-6">
@@ -226,7 +172,7 @@ class EachCountry extends Component {
               </div>
             </div>
           </div>
-          <div className="col-4 country-green">
+          <div className="col-6 col-sm-4 country-green">
             Tests
             <div className="row">
               <div className="col-6">
@@ -252,10 +198,10 @@ class EachCountry extends Component {
             Line options and configuration shown above as datasetsOptions
         */}
         <div className="country-cases">
-          <Line data={this.state.casesData} options={datasetsOptions} redraw />
+          <ChartLine chartProps={this.state.casesData} />
         </div>
         <div className="country-deaths">
-          <Line data={this.state.deathsData} options={datasetsOptions} redraw />
+          <ChartLine chartProps={this.state.deathsData} />
         </div>
       </div>
     );

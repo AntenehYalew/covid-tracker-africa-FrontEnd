@@ -4,6 +4,8 @@ A comprehensive and live update of covid 19 data for the continent of Africa.
 
 Continent and country data collected from John Hopkins University Public API
 
+Test page can be found **https://covidafricalive.netlify.app/**
+
 ## Getting Started
 
 The App runs on React.
