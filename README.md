@@ -4,11 +4,7 @@ A comprehensive and live update of covid 19 data for the continent of Africa.
 
 Continent and country data collected from John Hopkins University Public API
 
-<<<<<<< HEAD
-Test page can be found **covidafricalive.com/**
-=======
 Test page can be found **https://www.covidafricalive.com/**
->>>>>>> e9b879c6043d8484aa9b97b588c07134194244af
 
 ## Getting Started
 
@@ -33,6 +29,10 @@ npm install --save jquery
 ```
 
 ## Running the tests
+
+```
+NPM START
+```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
