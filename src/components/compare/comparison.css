@@ -3,6 +3,8 @@
   background-color: #282c35;
   border-radius: 5rem;
   padding-top: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -59,15 +61,17 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .comparison-cont h5 {
-    width: 90%;
-  }
   .compare-table tr > * {
     display: block;
   }
   .compare-table tr {
     display: table-cell;
   }
+  .comparison-cont h5 {
+    width: 90%;
+    margin-bottom: 0;
+  }
+
   .compare-table tr td {
     font-size: 1rem;
     font-weight: 300;
@@ -79,8 +83,13 @@
     font-weight: 300;
   }
   .compare-table {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .comparison-cont {
     margin-top: 1rem;
+    border-radius: 2rem;
+    padding-top: 1rem;
   }
 }
 @media only screen and (max-width: 375px) {
