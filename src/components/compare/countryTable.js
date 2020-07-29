@@ -24,7 +24,7 @@ class CountryTable extends Component {
           </tr>
 
           <tr>
-            <th>Total</th>
+            <td>Total</td>
             <td>{this.countryNumFormat(countryInfo.cases)}</td>
             <td>{this.countryNumFormat(countryInfo.active)}</td>
             <td>{this.countryNumFormat(countryInfo.deaths)}</td>
@@ -37,7 +37,7 @@ class CountryTable extends Component {
             </td>
           </tr>
           <tr>
-            <th>Per million</th>
+            <td>Per million</td>
             <td>{this.countryNumFormat(countryInfo.casesPerOneMillion)}</td>
             <td>{this.countryNumFormat(countryInfo.activePerOneMillion)}</td>
             <td>{this.countryNumFormat(countryInfo.deathsPerOneMillion)}</td>
