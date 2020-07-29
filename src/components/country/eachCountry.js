@@ -95,105 +95,49 @@ class EachCountry extends Component {
           <div className="col-6 country-name">{countryDetail.country}</div>
         </div>
 
-        <div className="container row">
-          <div className="col-6 col-sm-4 country-yellow">
-            Cases
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>{this.countryNumFormat(countryDetail.cases)}</div>
-              </div>
-              <div className="col-6">
-                <div> /mil</div>
-                <div>
-                  {this.countryNumFormat(countryDetail.casesPerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
+        <table className="country-table">
+          <tr>
+            <th>Status</th>
+            <th>Cases</th>
+            <th>Active</th>
+            <th>Deaths</th>
+            <th>Critical</th>
+            <th>Recovered</th>
+            <th>Tests</th>
+          </tr>
 
-          <div className="col-6 col-sm-4 country-yellow">
-            Active
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>{this.countryNumFormat(countryDetail.active)}</div>
-              </div>
-              <div className="col-6">
-                <div>/mil</div>
-                <div>
-                  {this.countryNumFormat(countryDetail.activePerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-6 col-sm-4 country-red">
-            Deaths
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>{this.countryNumFormat(countryDetail.deaths)}</div>
-              </div>
-              <div className="col-6">
-                <div>/mil</div>
-                <div>
-                  {this.countryNumFormat(countryDetail.deathsPerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-6 col-sm-4 country-red">
-            Critical
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>{this.countryNumFormat(countryDetail.critical)}</div>
-              </div>
-              <div className="col-6">
-                <div>/mil</div>
-                <div>
-                  {this.countryNumFormat(countryDetail.criticalPerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-6 col-sm-4 country-green">
-            Recovered
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>{this.countryNumFormat(countryDetail.recovered)}</div>
-              </div>
-              <div className="col-6">
-                <div>/mil</div>
-                <div>
-                  {this.countryNumFormat(countryDetail.recoveredPerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-6 col-sm-4 country-green">
-            Tests
-            <div className="row">
-              <div className="col-6">
-                <div>Total</div>
-                <div>
-                  {countryDetail.tests === 0
-                    ? "Not Public"
-                    : this.countryNumFormat(countryDetail.tests)}
-                </div>
-              </div>
-              <div className="col-6">
-                <div>/mil</div>
-                <div>
-                  {countryDetail.testsPerOneMillion === 0
-                    ? "Not Public"
-                    : this.countryNumFormat(countryDetail.testsPerOneMillion)}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <tr>
+            <th>Total</th>
+            <td>{this.countryNumFormat(countryDetail.cases)}</td>
+            <td>{this.countryNumFormat(countryDetail.active)}</td>
+            <td>{this.countryNumFormat(countryDetail.deaths)}</td>
+            <td>{this.countryNumFormat(countryDetail.critical)}</td>
+            <td>{this.countryNumFormat(countryDetail.recovered)}</td>
+            <td>
+              {countryDetail.tests === 0
+                ? "Not Public"
+                : this.countryNumFormat(countryDetail.tests)}
+            </td>
+          </tr>
+          <tr>
+            <th>Per million</th>
+            <td>{this.countryNumFormat(countryDetail.casesPerOneMillion)}</td>
+            <td>{this.countryNumFormat(countryDetail.activePerOneMillion)}</td>
+            <td>{this.countryNumFormat(countryDetail.deathsPerOneMillion)}</td>
+            <td>
+              {this.countryNumFormat(countryDetail.criticalPerOneMillion)}
+            </td>
+            <td>
+              {this.countryNumFormat(countryDetail.recoveredPerOneMillion)}
+            </td>
+            <td>
+              {countryDetail.testsPerOneMillion === 0
+                ? "Not Public"
+                : this.countryNumFormat(countryDetail.testsPerOneMillion)}
+            </td>
+          </tr>
+        </table>
+
         {/* Chart Js used to build the chart showing below 
             Line options and configuration shown above as datasetsOptions
         */}

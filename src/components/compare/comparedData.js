@@ -1,17 +1,17 @@
 import React, { Component } from "react";
+import CountryTable from "./countryTable";
 import "./comparedData.css";
 
 class ComparedData extends Component {
-  countryNumFormat = (num) => {
-    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-  };
-
   render() {
     const countryOne = this.props.countryDetaileddata[0];
-    const countrytwo = this.props.countryDetaileddata[1];
+    const countryTwo = this.props.countryDetaileddata[1];
     return (
       <div>
-        <div className="row">
+        <CountryTable countryInfo={countryOne} />
+        <CountryTable countryInfo={countryTwo} />
+
+        {/*     <div className="row">
           <div className="col-6 compareddata-left">
             <h5>{countryOne.country}</h5>
             <div className="row">
@@ -216,7 +216,7 @@ class ComparedData extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Switch, Route } from "react-router-dom";
-import NavBar from "../partials/navbar";
+import NavBar from "../partials/navbar/navbar";
 import DashBoardRoute from "./dashboardRoute";
 import EachCountry from "../country/eachCountry";
-import Footer from "../partials/footer";
-import Error from "../partials/error";
+import Footer from "../partials/footer/footer";
+import Error from "../partials/error/error";
 import ScrollToTop from "../partials/scrollTop";
-import Loading from "../partials/loadingPage";
+import Loading from "../partials/loading/loadingPage";
 import Comparison from "../compare/comparison";
 
 //Main Switch page to redirect each path
@@ -19,11 +19,20 @@ class DashBoard extends Component {
       statsCountries: [],
       toggleSorting: true,
       error: false,
+      sortedBy: "country",
     };
     this.handleSort = this.handleSort.bind(this);
   }
   //collectdata from API
-  async componentDidMount() {
+  componentDidMount() {
+    this.collectedData();
+    this.interval = setInterval(() => this.collectedData(), 15 * 60 * 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.collectedData);
+  }
+  collectedData = async () => {
     let currentComponent = this;
     //Collect Continent data
     await axios
@@ -51,7 +60,7 @@ class DashBoard extends Component {
           error: true,
         });
       });
-  }
+  };
 
   //Sort data on key
   handleSort(sortKey) {
@@ -70,6 +79,7 @@ class DashBoard extends Component {
     this.setState({
       statsCountries: sortMgt,
       toggleSorting: !toggle,
+      sortedBy: sortKey,
     });
   }
 

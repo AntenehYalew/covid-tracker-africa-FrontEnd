@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DashboardHeader from "./dashboardheader";
 import DashBoardBody from "./dashboardbody";
-import Loading from "../partials/loadingPage";
+import Loading from "../partials/loading/loadingPage";
 import "./dashboardRoute.css";
 class DashBoardRoute extends Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class DashBoardRoute extends Component {
     const updatedTime = Math.floor(
       (Date.now() - dashBoardProps.statsAfrica.updated) / 60000
     );
+    const sortedBy = this.props.dashBoardProps.sortedBy;
     return (
       <div className="container dashboardroute-cont">
         {dashBoardProps.statsCountries.length > 0 ? (
@@ -38,20 +39,23 @@ class DashBoardRoute extends Component {
                 >
                   John Hopkins University
                 </a>
-                &nbsp;
-                <small>(Updated: {updatedTime} min ago)</small>
               </h3>
-
+              <small>(Updated: {updatedTime} min ago)</small>
               <table className="table table-striped">
                 <thead>
                   <tr>
                     <th
                       colSpan="2"
                       rowSpan="2"
-                      className="th-country "
+                      className={
+                        sortedBy === "country"
+                          ? "th-country sorted"
+                          : "th-country"
+                      }
                       onClick={(e) => this.handleClick(e, "country")}
                     >
-                      Country <i className="fas fa-sort"></i>
+                      Country
+                      <i className="fas fa-sort"></i>
                     </th>
                     <th colSpan="2" className="th-cases ">
                       Cases
@@ -63,31 +67,45 @@ class DashBoardRoute extends Component {
                   </tr>
                   <tr>
                     <th
-                      className="th-cases "
+                      className={
+                        sortedBy === "cases" ? "th-cases sorted" : "th-cases"
+                      }
                       onClick={(e) => this.handleClick(e, "cases")}
                     >
                       Total<i className="fas fa-sort"></i>
                     </th>
                     <th
-                      className="th-cases "
+                      className={
+                        sortedBy === "todayCases"
+                          ? "th-cases sorted"
+                          : "th-cases"
+                      }
                       onClick={(e) => this.handleClick(e, "todayCases")}
                     >
                       New<i className="fas fa-sort"></i>
                     </th>
                     <th
-                      className="th-death "
+                      className={
+                        sortedBy === "deaths" ? "th-death sorted" : "th-death"
+                      }
                       onClick={(e) => this.handleClick(e, "deaths")}
                     >
                       Total<i className="fas fa-sort"></i>
                     </th>
                     <th
-                      className="th-death "
+                      className={
+                        sortedBy === "todayDeaths"
+                          ? "th-death sorted"
+                          : "th-death"
+                      }
                       onClick={(e) => this.handleClick(e, "todayDeaths")}
                     >
                       New<i className="fas fa-sort"></i>
                     </th>
                     <th
-                      className="th-tests "
+                      className={
+                        sortedBy === "tests" ? "th-tests sorted" : "th-tests"
+                      }
                       onClick={(e) => this.handleClick(e, "tests")}
                     >
                       Total<i className="fas fa-sort"></i>

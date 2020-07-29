@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ChartLine from "../country/chartLine";
-import Loading from "../partials/loadingPage";
+import Loading from "../partials/loading/loadingPage";
 import ComparedData from "./comparedData";
 import "./comparison.css";
 
@@ -196,7 +196,7 @@ class Comparison extends Component {
           <div className="comparison-cont">
             {!this.state.comparePage ? (
               <div>
-                <h5>Please enter the country's name </h5>
+                <h5>Compare two countries</h5>
                 <div className="search-cont container">
                   <div className="row">
                     <div className="col-12 col-sm-6">

@@ -1,3 +1,6 @@
+.navbar.navbar-dark {
+  background-color: #282c35;
+}
 .navbar-brand img {
   margin-right: 0.25rem;
 }
@@ -44,6 +47,22 @@
 }
 
 @media screen and (max-width: 500px) {
+  .navbar .container .navbar-brand {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0rem;
+  }
+  .navbar .container .comparison-navbar {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0rem;
+  }
+  .navbar-brand img {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
   .navbar .container .navbar-text {
     display: none;
   }

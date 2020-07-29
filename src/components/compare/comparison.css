@@ -1,6 +1,11 @@
 .comparison-cont {
   margin-top: 2rem;
+  background-color: #282c35;
+  border-radius: 5rem;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
 }
+
 .comparison-cont h5 {
   color: rgb(223, 219, 219);
 }
@@ -33,4 +38,76 @@
 }
 .comparisondata-cont h4 {
   color: #fff;
+}
+.compare-table {
+  color: #f8f8ff;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+.compare-table tr td {
+  font-size: 0.875rem;
+  text-align: left;
+  padding-right: 0.5rem;
+  font-weight: 300;
+}
+.compare-table tr th {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .comparison-cont h5 {
+    width: 90%;
+  }
+  .compare-table tr > * {
+    display: block;
+  }
+  .compare-table tr {
+    display: table-cell;
+  }
+  .compare-table tr td {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-bottom: 0.5rem;
+  }
+  .compare-table tr th {
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .compare-table {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .compare-table tr td {
+    font-size: 0.875rem;
+    font-weight: 300;
+    padding-bottom: 0.15rem;
+  }
+  .compare-table tr th {
+    padding-bottom: 0.2rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+  .compare-table {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .compare-table {
+    width: 100%;
+  }
+  .compare-table tr td {
+    font-size: 0.875rem;
+    padding-right: 0.5rem;
+  }
+  .compare-table tr th {
+    font-size: 1rem;
+    font-weight: 300;
+  }
 }

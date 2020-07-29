@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar  navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar  navbar-expand-lg navbar-dark ">
         <div className="container">
           <NavLink
             exact
@@ -13,7 +13,7 @@ class NavBar extends Component {
             className="navbar-brand"
             to="/"
             activeStyle={{
-              color: "rgb(66, 216, 52)",
+              color: "rgb(39, 150, 29)",
             }}
           >
             <img
@@ -32,7 +32,7 @@ class NavBar extends Component {
             className="navbar-brand comparison-navbar"
             to="/comparison"
             activeStyle={{
-              color: "rgb(66, 216, 52)",
+              color: "rgb(39, 150, 29)",
             }}
           >
             Comparison

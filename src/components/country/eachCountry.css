@@ -1,18 +1,21 @@
 .country-cont {
-  margin-top: 1rem;
+  margin-top: 1.55rem;
+  padding-top: 1.5rem;
   font-size: 1.45rem;
+  background-color: #282c35;
+  border-radius: 5rem;
 }
 .country-cont > .row {
   margin-bottom: 2rem;
 }
 .country-name {
-  font-size: 4rem;
+  font-size: 2rem;
   color: white;
 }
 
 .country-flag img {
   position: absolute;
-  width: 30%;
+  width: 15%;
   border-radius: 50%;
   margin: auto;
   top: 0;
@@ -21,31 +24,28 @@
   left: 0;
 }
 
-.country-green,
-.country-yellow,
-.country-red {
-  margin-top: 1rem;
+.country-table {
+  color: #f8f8ff;
+  margin: auto;
+  width: 90%;
+  position: relative;
+  margin-bottom: 4rem;
 }
-
-.country-green {
-  color: rgb(41, 228, 85);
+.country-table tr td {
+  font-size: 0.875rem;
+  text-align: left;
+  padding-right: 0.5rem;
+  font-weight: 300;
 }
-.country-yellow {
-  color: rgb(244, 248, 9);
-}
-.country-red {
-  color: rgb(224, 212, 212);
-}
-
-.country-cases,
-.country-deaths {
-  margin-bottom: 2rem;
+.country-table tr th {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {
-  .country-cont > .row {
-    margin-bottom: 1rem;
-  }
   .country-flag img {
     width: 40%;
   }
@@ -55,16 +55,30 @@
   .country-name {
     font-size: 2.5rem;
   }
+  .country-table {
+    width: 100%;
+  }
+  .country-table tr td {
+    font-size: 0.875rem;
+    padding-right: 0.5rem;
+  }
+  .country-table tr th {
+    font-size: 1rem;
+    font-weight: 300;
+  }
 }
 
 @media only screen and (min-width: 940px) {
   .country-cases,
   .country-deaths {
-    width: 80%;
+    width: 90%;
     margin: auto;
   }
 }
 @media only screen and (max-width: 500px) {
+  .country-cont {
+    max-width: 93%;
+  }
   .country-cases,
   .country-deaths {
     height: 40vh;
@@ -76,12 +90,37 @@
   .country-flag img {
     width: 30%;
   }
-  .country-cont > .row {
-    margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .country-table tr td {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-bottom: 0.5rem;
   }
-  .country-green,
-  .country-yellow,
-  .country-red {
-    margin-top: 0.5rem;
+  .country-table tr th {
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .country-table tr > * {
+    display: block;
+  }
+  .country-table tr {
+    display: table-cell;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .country-table tr td {
+    font-size: 0.875rem;
+    font-weight: 300;
+    padding-bottom: 0.15rem;
+  }
+  .country-table tr th {
+    padding-bottom: 0.2rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+  .country-cont {
+    max-width: 100%;
   }
 }

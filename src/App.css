@@ -1,13 +1,6 @@
 .App {
   text-align: center;
-/*   background: rgba(15, 2, 128, 0.342);  */
-  background: #545d81 ;
-  
-  font-family: 'EB Garamond', serif;
+  /*   background: rgba(15, 2, 128, 0.342);  */
+  background: #222220;
+  font-family: "Roboto Mono", monospace;
 }
-
-
-
-
-
-
