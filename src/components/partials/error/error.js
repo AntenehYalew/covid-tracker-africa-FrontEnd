@@ -6,7 +6,7 @@ class Error extends Component {
     return (
       <div className="error">
         <div className="alert alert-danger" role="alert">
-          Something went Wrong. Please check back again
+          Your Session expired. Please Refresh your page
         </div>
       </div>
     );
