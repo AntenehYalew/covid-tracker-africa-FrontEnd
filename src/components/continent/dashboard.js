@@ -36,20 +36,24 @@ class DashBoard extends Component {
     await axios
       .get(`https://corona.lmao.ninja/v2/continents/Africa?today=&strict=`)
       .then((resp) => {
-        const allDetails = { continentData: resp.data, countryData: [] };
-        //Collect Country Data
-        async function runAllCountries() {
-          for (let i = 0; i < resp.data.countries.length; i++) {
-            const newdata = await axios(
-              `https://corona.lmao.ninja/v2/countries/${resp.data.countries[i]}?today=true&strict=true&query =`
-            );
-            allDetails.countryData.push(newdata.data);
-          }
-          currentComponent.setState({
-            statsAfrica: allDetails.continentData,
-            statsCountries: allDetails.countryData,
-          });
-        }
+        const allCountries = resp.data.countries.toString();
+        const runAllCountries = async () => {
+          await axios(
+            `https://corona.lmao.ninja/v2/countries/${allCountries}?today=true&strict=true&query =`
+          )
+            .then((response) => {
+              currentComponent.setState({
+                statsAfrica: resp.data,
+                statsCountries: response.data,
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+              currentComponent.setState({
+                error: true,
+              });
+            });
+        };
         runAllCountries();
       })
       .catch((err) => {
