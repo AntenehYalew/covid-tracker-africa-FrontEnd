@@ -28,6 +28,12 @@
   width: 60%;
   text-align: left;
 }
+.cases,
+.death,
+.tests {
+  text-align: right;
+  margin: 0;
+}
 
 .dashboard-africa-right .row {
   margin: auto;
@@ -107,11 +113,5 @@
   .dashboard-africa-right .row h3 {
     font-size: 0.875rem;
     font-size: 300;
-  }
-  .cases,
-  .death,
-  .tests {
-    text-align: right;
-    margin: 0;
   }
 }
