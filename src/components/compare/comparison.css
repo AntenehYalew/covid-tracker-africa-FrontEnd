@@ -71,7 +71,10 @@
     width: 90%;
     margin-bottom: 0;
   }
-
+  .comparison-cases,
+  .comparison-deaths {
+    height: 60vh;
+  }
   .compare-table tr td {
     font-size: 1rem;
     font-weight: 300;

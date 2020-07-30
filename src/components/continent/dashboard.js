@@ -12,6 +12,8 @@ import Comparison from "../compare/comparison";
 
 //Main Switch page to redirect each path
 class DashBoard extends Component {
+  //create the instance for refresh interval
+  intervalID;
   constructor(props) {
     super(props);
     this.state = {
@@ -26,12 +28,8 @@ class DashBoard extends Component {
   //collectdata from API
   componentDidMount() {
     this.collectedData();
-    this.interval = setInterval(() => this.collectedData(), 15 * 60 * 1000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.collectedData);
-  }
   collectedData = async () => {
     let currentComponent = this;
     //Collect Continent data
@@ -60,7 +58,14 @@ class DashBoard extends Component {
           error: true,
         });
       });
+    //Call the function with setTimeout to keep an auto componentDidMount every 1min
+    this.intervalID = setTimeout(this.collectedData.bind(this), 60000);
   };
+  // clear the interval when the component unmounts
+
+  componentWillUnmount() {
+    clearTimeout(this.intervalID);
+  }
 
   //Sort data on key
   handleSort(sortKey) {
