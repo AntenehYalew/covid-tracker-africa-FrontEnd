@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+#Code to not allow any search engines!
+User-agent: *
+Disallow: /
